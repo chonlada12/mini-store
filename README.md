@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini Store
 
-## Getting Started
+โปรเจกต์ E-commerce Frontend สำหรับร้านค้าออนไลน์ขนาดเล็ก พัฒนาด้วย Next.js 15, React 19, TypeScript และ Tailwind CSS
 
-First, run the development server:
+## 🚀 Technologies
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 15.5.6** - React Framework พร้อม Turbopack
+- **React 19.1.0** - UI Library
+- **TypeScript 5** - Type Safety
+- **Tailwind CSS 4** - Utility-First CSS Framework
+- **Lucide React** - Icon Library
+
+## 📁 โครงสร้างโปรเจกต์
+
+```
+mini-store/
+├── src/
+│   ├── app/                          # Next.js App Router
+│   │   ├── (main)/                   # Main Layout Group
+│   │   │   ├── home/                 # หน้าหลัก
+│   │   │   └── product/[id]/         # หน้ารายละเอียดสินค้า
+│   │   ├── layout.tsx                # Root Layout
+│   │   ├── not-found.tsx             # 404 Page
+│   │   ├── page.tsx                  # Home Page
+│   │   └── globals.css               # Global Styles
+│   │
+│   ├── components/                   # React Components
+│   │   ├── feature/                  # Feature Components
+│   │   │   ├── home/                 # Home Components
+│   │   │   │   └── product.tsx
+│   │   │   └── product/              # Product Components
+│   │   │       └── product-detail.tsx
+│   │   ├── layout/                   # Layout Components
+│   │   │   ├── content/
+│   │   │   ├── footer/
+│   │   │   └── header/
+│   │   └── shared/                   # Shared Components
+│   │       ├── card/
+│   │       │   ├── card.tsx
+│   │       │   └── product-card.tsx
+│   │       ├── button.tsx
+│   │       ├── loading.tsx
+│   │       └── rating.tsx
+│   │
+│   ├── constants/                    # Constants & Config
+│   │   └── index.ts
+│   │
+│   ├── hook/                         # Custom Hooks
+│   │   └── use-product-action.tsx
+│   │
+│   ├── types/                        # TypeScript Types
+│   │   ├── index.ts
+│   │   └── product.ts
+│   │
+│   └── utils/                        # Utility Functions
+│       ├── index.ts
+│       └── local-storage.ts
+│
+├── public/                           # Static Assets
+├── .gitignore
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.json
+└── next-env.d.ts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- ✅ หน้าแสดงรายการสินค้า (Product Listing)
+- ✅ หน้ารายละเอียดสินค้า (Product Detail)
+- ✅ ระบบ Rating สินค้า
+- ✅ Responsive Design
+- ✅ Custom Hooks สำหรับจัดการ Product Actions
+- ✅ Local Storage Integration
+- ✅ TypeScript Type Safety
+- ✅ Reusable Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation
 
-## Learn More
+```bash
+# Clone repository
+git clone https://github.com/chonlada12/mini-store.git
 
-To learn more about Next.js, take a look at the following resources:
+# เข้าไปในโฟลเดอร์โปรเจกต์
+cd mini-store-front
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# ติดตั้ง dependencies
+npm install
+# หรือ
+yarn install
+# หรือ
+pnpm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Development
 
-## Deploy on Vercel
+```bash
+# รัน development server
+npm run dev
+# หรือ
+yarn dev
+# หรือ
+pnpm dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# เปิดเบราว์เซอร์ไปที่
+http://localhost:3000
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔨 Build & Production
+
+```bash
+# Build โปรเจกต์
+npm run build
+# หรือ
+yarn build
+# หรือ
+pnpm build
+
+# รัน production server
+npm run start
+# หรือ
+yarn start
+# หรือ
+pnpm start
+```
+
+## 📝 Scripts
+
+| Script | คำอธิบาย |
+|--------|----------|
+| `npm run dev` | รัน development server ด้วย Turbopack |
+| `npm run build` | Build โปรเจกต์สำหรับ production |
+| `npm run start` | รัน production server |
+| `npm run lint` | ตรวจสอบโค้ดด้วย ESLint |
+
+## 🎨 Component Structure
+
+### Shared Components
+- **Button** - ปุ่มที่ใช้ซ้ำได้ทั่วทั้งแอป
+- **Card** - Card container สำหรับแสดงเนื้อหา
+- **Product Card** - Card สำหรับแสดงสินค้า
+- **Loading** - Loading state component
+- **Rating** - แสดง rating ของสินค้า
+
+### Feature Components
+- **Home/Product** - Component สำหรับหน้าหลัก
+- **Product/Product Detail** - Component รายละเอียดสินค้า
+
+### Layout Components
+- **Header** - Header ของเว็บไซต์
+- **Footer** - Footer ของเว็บไซต์
+- **Content** - Content wrapper
+
+## 🔧 Custom Hooks
+
+### `use-product-action.tsx`
+Custom hook สำหรับจัดการ actions ที่เกี่ยวข้องกับสินค้า เช่น เพิ่มลงตะกร้า, เพิ่มลงรายการโปรด
+
+## 💾 Utils
+
+- **local-storage.ts** - Helper functions สำหรับจัดการ Local Storage
+
+## 🎯 Type Definitions
+
+ไฟล์ type definitions อยู่ใน `src/types/`:
+- `index.ts` - Global types
+- `product.ts` - Product related types
+
+## 🌐 Routing
+
+โปรเจกต์ใช้ Next.js App Router:
+- `/home` - หน้าหลัก
+- `/product/[id]` - หน้ารายละเอียดสินค้า
+
+## 📱 Responsive Design
+
+โปรเจกต์รองรับการแสดงผลบนหลากหลายอุปกรณ์:
+- 📱 Mobile
+- 📱 Tablet
+- 💻 Desktop

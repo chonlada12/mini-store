@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mini Store Front",
-  description: "A simple store front built with Next.js and TypeScript.",
+  title: "Mini Store",
+  description: "A simple mini store built with Next.js and TypeScript.",
 };
 
 export default function RootLayout({
