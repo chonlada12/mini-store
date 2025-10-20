@@ -38,7 +38,7 @@ export const ProductActionProvider = ({ children }: { children: ReactNode }) => 
     setCart(updatedCart);
     setLocalStorage("cart", updatedCart);
 
-    alert(`✅ เพิ่มสินค้าเรียบร้อย: ${product.title}`);
+    alert(`เพิ่มสินค้าเรียบร้อย: ${product.title}`);
   };
 
   return <ProductActionContext.Provider value={{ cart, addToCart }}>{children}</ProductActionContext.Provider>;
