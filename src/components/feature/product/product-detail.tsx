@@ -85,7 +85,7 @@ const DetailItem = ({ product }: { product: Product }) => {
             <h1 className="text-2xl font-bold text-neutral-900 mb-2">{product.title}</h1>
             <Rating value={product.rating?.rate ?? 0} />
             <p className="mt-4 text-2xl font-semibold text-neutral-800">{formatTHB(product.price)}</p>
-            <p className="mt-6 text-neutral-700 leading-relaxed whitespace-pre-line">{product.description}</p>
+            <p className="mt-6 text-neutral-700">{product.description}</p>
           </div>
 
           <div className="mt-8 flex items-center gap-4">
