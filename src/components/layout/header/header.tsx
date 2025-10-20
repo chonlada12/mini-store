@@ -17,10 +17,10 @@ export const HeaderContent = (props: HeaderContentProps) => {
 
   return (
     <header className="h-16 bg-white border-b border-neutral-100 flex justify-center w-full  ">
-      <div className=" w-full flex items-center justify-between p-6 ">
-        <div className={cn("sm:text-xl md:text-xl font-bold")}>{title}</div>
+      <div className=" w-full flex items-center justify-between p-4 lg:p-6 ">
+        <div className={cn("sm:text-xl md:text-xl font-bold text-black")}>{title}</div>
         <div className="relative">
-          <ShoppingCartIcon />
+          <ShoppingCartIcon className="text-black" />
           {countCart > 0 && <Badge count={countCart || 0} />}
         </div>
       </div>

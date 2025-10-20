@@ -39,8 +39,8 @@ export const ProductContent = () => {
 
   return (
     <section className="h-full">
-      <div className="p-6">
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+      <div className="p-4 lg:p-6">
+        <div className="grid grid-cols-2 gap-2 md:gap-3.5 lg:gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
           {products && products.map((product) => <ProductCard key={product.id} product={product} />)}
         </div>
       </div>

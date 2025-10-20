@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export const formatTHB = (n: number) =>
-  new Intl.NumberFormat("us-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n);
+export const formatUSD = (n: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(n);
 
 export * from "./local-storage";

@@ -3,7 +3,7 @@ import { Button, Loading } from "@/components/shared";
 import { Rating } from "@/components/shared/rating";
 import { useProductAction } from "@/hook/use-product-action";
 import { Product } from "@/types";
-import { cn, formatTHB } from "@/utils";
+import { cn, formatUSD } from "@/utils";
 import { ChevronLeft } from "lucide-react";
 import Image from "next/image";
 import { notFound, useRouter } from "next/navigation";
@@ -65,9 +65,12 @@ const DetailItem = ({ product }: { product: Product }) => {
 
   return (
     <>
-      <div className={cn("text-xl font-bold flex flex-row gap-1 items-center cursor-pointer pb-6")} onClick={onBack}>
+      <h1
+        className={cn("text-xl font-bold flex flex-row gap-1 items-center cursor-pointer pb-6 text-black")}
+        onClick={onBack}
+      >
         <ChevronLeft /> Detail
-      </div>
+      </h1>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="flex items-center justify-center rounded-2xl border border-neutral-200 bg-white p-4 shadow-sm">
@@ -82,9 +85,9 @@ const DetailItem = ({ product }: { product: Product }) => {
 
         <div className="flex flex-col justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-neutral-900 mb-2">{product.title}</h1>
+            <h2 className="text-xl font-bold text-neutral-900 mb-2">{product.title}</h2>
             <Rating value={product.rating?.rate ?? 0} />
-            <p className="mt-4 text-2xl font-semibold text-neutral-800">{formatTHB(product.price)}</p>
+            <p className="mt-4 text-2xl font-semibold text-neutral-800">{formatUSD(product.price)}</p>
             <p className="mt-6 text-neutral-700">{product.description}</p>
           </div>
 

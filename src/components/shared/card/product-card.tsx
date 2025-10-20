@@ -1,7 +1,7 @@
 "use client";
 import { useProductAction } from "@/hook/use-product-action";
 import { Product } from "@/types";
-import { formatTHB } from "@/utils";
+import { formatUSD } from "@/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Button } from "..";
@@ -26,10 +26,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   };
 
   return (
-    <Card className="p-0 flex flex-col gap-2 h-full justify-between group">
-      <div onClick={onClickCard} className="px-1 pt-1 ">
-        <div className="p-3">
-          <div className="w-full flex justify-center h-[150px] ">
+    <Card className="p-1.5  md:p-0 flex flex-col gap-1.5 h-full justify-between group">
+      <div onClick={onClickCard} className="md:px-1 md:pt-1 ">
+        <div className="md:p-3">
+          <div className="w-full flex justify-center  h-[150px] ">
             <Image
               src={image}
               alt={title}
@@ -39,16 +39,16 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             />
           </div>
         </div>
-        <div className="p-3 flex flex-col gap-2">
-          <h2 className="line-clamp-2 text-base font-semibold ">{title}</h2>
-          <div className="text-red-500">{formatTHB(price)}</div>
+        <div className="p-1.5 md:p-3 flex flex-col gap-1.5">
+          <h2 className="line-clamp-2 text-xs md:text-base font-semibold text-black ">{title}</h2>
+          <div className=" text-xs md:text-base text-red-500">{formatUSD(price)}</div>
           <div className="flex items-center gap-1 text-sm text-neutral-500">
             <Rating value={rating.rate} />
           </div>
-          <p className="text-sm line-clamp-2 text-neutral-700">{description}</p>
+          <p className="text-xs md:text-sm line-clamp-2 text-neutral-700">{description}</p>
         </div>
       </div>
-      <div className="flex justify-end flex-col px-3 pb-3">
+      <div className="flex justify-end flex-col md:px-3 md:pb-3">
         <Button type="button" className="cursor-pointer w-full" onClick={onClickAddToCart}>
           Add to Cart
         </Button>
