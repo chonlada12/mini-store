@@ -1,3 +1,4 @@
+import { FooterContent } from "@/components/layout/footer";
 import { HeaderContent } from "@/components/layout/header";
 import { ProductActionProvider } from "@/hook/use-product-action";
 
@@ -11,6 +12,7 @@ export default function MainLayout({
       <div className="flex flex-col w-screen h-screen overflow-hidden">
         <HeaderContent title="Mini Store" />
         {children}
+        <FooterContent />
       </div>
     </ProductActionProvider>
   );
